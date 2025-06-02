@@ -1,0 +1,39 @@
+{
+  "name": "proyectofinalbackend3",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node --watch src/server.js",
+    "test:fs": "set PERSISTENCE=fs && set NODE_OPTIONS=--experimental-vm-modules && npx jest",
+    "test:mongo": "set PERSISTENCE=mongo && set NODE_OPTIONS=--experimental-vm-modules && npx jest"
+  },
+  "type": "module",
+  "author": "",
+  "license": "ISC",
+  "description": "",
+  "dependencies": {
+    "@faker-js/faker": "^9.8.0",
+    "bcrypt": "^6.0.0",
+    "connect-mongo": "^5.1.0",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-session": "^1.18.1",
+    "express-validator": "^7.2.1",
+    "jsonwebtoken": "^9.0.2",
+    "log4js": "^6.9.1",
+    "mongoose": "^8.15.0",
+    "mongoose-paginate-v2": "^1.9.0",
+    "multer": "^1.4.5-lts.2",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "socket.io": "^4.8.1",
+    "swagger-jsdoc": "^6.2.8",
+    "swagger-ui-express": "^5.0.1",
+    "uuid": "^11.1.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^7.1.1"
+  }
+}
