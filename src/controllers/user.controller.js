@@ -10,12 +10,9 @@ class UserController extends Controllers {
 
     register = async(req, res, next) => {
         try {
-            console.log("Body recibido en /register: ", req.body);
-            
             const user = await this.service.register(req.body);
             return res.status(201).json(user);
         } catch(error) {
-            console.error("Error en controller register: ", error.message);            
             res.status(500).json({error: "Error interno en el servidor"})
         }
     };
@@ -24,6 +21,7 @@ class UserController extends Controllers {
         try {
             const token = await this.service.login(req.body);
             res
+            .status(201)
             .cookie("token", token, { httpOnly: true })
             .json({ message: "Login Ok", token});
         } catch(error) {

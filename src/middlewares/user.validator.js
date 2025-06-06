@@ -28,9 +28,7 @@ export const userValidator = [
     check("role", "El role debe ser user o admin")
         .optional()
         .isIn(([ "user", "admin"])),
-    (req, res, next) => {
-        console.log("Cuerpo recibido en el validador", req.body);
-        
+    (req, res, next) => {       
         const errors = validationResult(req);
         if(!errors.isEmpty()) {
             return res.status(400).json({errores: errors.array()});

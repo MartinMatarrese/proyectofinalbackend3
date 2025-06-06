@@ -5,7 +5,8 @@
   "scripts": {
     "start": "node --watch src/server.js",
     "test:fs": "set PERSISTENCE=fs && set NODE_OPTIONS=--experimental-vm-modules && npx jest",
-    "test:mongo": "set PERSISTENCE=mongo && set NODE_OPTIONS=--experimental-vm-modules && npx jest"
+    "test:mongo": "cross-env PERSISTENCE=mongo NODE_OPTIONS=--experimental-vm-modules npx jest src/test/test.js"
+
   },
   "type": "module",
   "author": "",
@@ -33,6 +34,7 @@
     "uuid": "^11.1.0"
   },
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "jest": "^29.7.0",
     "supertest": "^7.1.1"
   }

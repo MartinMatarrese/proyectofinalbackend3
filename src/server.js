@@ -58,8 +58,6 @@ app.set("views", path.join(__dirname, "views"));
 app.use("/public", express.static(__dirname + "/public"));
 
 app.use("/users", userRouter);
-console.log("Rutas /users activas");
-
 
 app.use("/api/products", productRouter);
 

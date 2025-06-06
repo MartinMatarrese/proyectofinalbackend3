@@ -5,7 +5,6 @@ import Services from "./service.manager.js";
 import { cartServices } from "./cart.service.js";
 import { userRepository } from "../repository/user.repositrory.js";
 import { generateUsers } from "../utils/mockGenerator.js";
-//import UserResDto from "../dtos/user.res.dto.js";
 
 class UserService extends Services {
     constructor() {
@@ -61,7 +60,6 @@ class UserService extends Services {
 
             const cartUser = await cartServices.createCart({ userId: newUser._id });
             const updateUser = await userRepository.update(newUser._id, { cart: cartUser._id});            
-            //return  new UserResDto(updateUser);
             return updateUser
         } catch(error) {            
             throw new Error(`Error al registrar el usuario: ${error.message}`);
@@ -80,7 +78,7 @@ class UserService extends Services {
             if(!passValid) throw new Error("Credenciales incorrectas");
             return this.generateToken(userExist);
         } catch (error) {
-            throw new Error(error);
+            throw new Error(error.message);
         }
     };
 

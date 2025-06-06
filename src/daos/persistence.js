@@ -8,7 +8,7 @@ import { userDao as userDaoFs } from "./filesystem/user.dao.js";
 import { userDao as userDaoMongo } from "./mongodb/user.dao.js";
 import { petDao as petDaoMongo } from "./mongodb/pet.dao.js";
 import { petDao as petDaoFs} from "./filesystem/pet.dao.js";
-import { initMongoDB } from "../db/dbConfig.js";
+import { initMongoDB } from "../db/dbconfig.js";
 
 let prodDao;
 
@@ -21,7 +21,6 @@ let userDao;
 let petDao;
 
 const persistence = process.env.PERSISTENCE || "fs";
-console.log("Modo de persistencia recibido:", persistence);
 
 
 switch(persistence) {

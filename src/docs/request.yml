@@ -1,47 +1,46 @@
 components:
-  parameters:
-    schemas:
-      User:
-        type: object
-        required:
-          - first_name
-          - last_name
-          - email
-          - age
-          - password
-        properties:
-          firts_name:
-            type: string
-            description: Nombre del usuario
-          last_name:
-            type: string
-            description: Apellido del usuario
-          email:
-            type: string
-            description: Email del usuario
-          age:
-            type: number
-            description: Edad del usuario
-          password: 
-            type: string
-            description: Contraseña del usuario
-      login:
-        type: object
-        required:
-          - email
-          - password
-        properties:
-          email:
-            type: string
-            description: Email del usuario
-          password:
-            type: string
-            description: Contraseña del usuario
-        example:
-          email: pepe@gmail.com
-          password: hdjsah1234hjadshj
-      securitySchemes:
-        BearerAuth:
-          type: http
-          schema: Bearer
-          BearerFormat: JWT
+  schemas:
+    User:
+      type: object
+      required:
+        - first_name
+        - last_name
+        - email
+        - age
+        - password
+      properties:
+        first_name:
+          type: string
+          description: Nombre del usuario
+        last_name:
+          type: string
+          description: Apellido del usuario
+        email:
+          type: string
+          description: Email del usuario
+        age:
+          type: number
+          description: Edad del usuario
+        password: 
+          type: string
+          description: Contraseña del usuario
+    login:
+      type: object
+      required:
+        - email
+        - password
+      properties:
+        email:
+          type: string
+          description: Email del usuario
+        password:
+          type: string
+          description: Contraseña del usuario
+      example:
+        email: pepe@gmail.com
+        password: hdjsah1234hjadshj
+  securitySchemes:
+    BearerAuth:
+      type: http
+      scheme: Bearer
+      bearerFormat: JWT

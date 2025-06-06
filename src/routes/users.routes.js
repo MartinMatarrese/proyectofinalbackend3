@@ -12,6 +12,4 @@ userRouter.post("/login", userController.login);
 
 userRouter.get("/current", [ jwtAuth, roleAuth("user", "admin")], userController.privateData);
 
-console.log("Rutas de usuarios cargadas", userRouter );
-
 export default userRouter;
